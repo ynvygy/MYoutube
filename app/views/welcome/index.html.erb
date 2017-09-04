@@ -5,15 +5,20 @@
     <nav>
       <ul>
         <li><a href="#">Videos</a></li>
-        <li><a href="#">Sign In</a></li>
-        <li><a href="#">Upload video</a></li>
+        <% unless user_signed_in? %>
+          <li><%= link_to "Sign In", new_user_session_path %></a></li>
+          <li><%= link_to "Create a User", new_user_registration_path%></li>
+        <% else %>
+          <li><a href="#">Dashboard</a></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
+        <% end %>
       </ul>
     </nav>
     </div>  
 	</header>
   <div class="wrapper_skinny">
     <h1>Welcome to your favourite <br> video webpage</h1>
-    <a href="#" class="button button-highlight">Upload video</a>
+    <%= link_to "Create a User", new_user_registration_path, class: "button button-highlight" %>
     <a href="#" class="button button-highlight">Videos</a>
   </div>  
 </div>
