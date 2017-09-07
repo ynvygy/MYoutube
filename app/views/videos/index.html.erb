@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MYoutube</title>
+    <link rel="stylesheet" href="css/application.css">
+  </head>
+  <body>
+    <header id="main_header" class="cf">
+      <div class="wrapper_wide">
+        <a href="index.html" id="logo">MYoutube</a>
+        <nav>
+          <ul>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="sign-in.html">Sign In</a></li>
+            <li><a href="sign-up.html">Upload video</a></li>
+          </ul>
+        </nav>
+      </div>  
+    </header>
+    <div id="banner" class="video_banner">
+      <h1>Go go videos</h1>
+    </div>
+    <div id="videos" class="cf">
+      <div class="wrapper">
+        <ul>
+          <% @videos.each do |video| %>
+            <%= link_to video_path do %>
+              <li>
+                  <img src="images/videos1.jpg" alt="Videos1">
+                  <div class="video_overview">
+                    <h2><%= video.title %><h2>
+                    <p class="videos_count">1 Video</p>
+                  </div>  
+                </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pagination">
+      <span class="previous_page disabled">Previous</span>
+      <em class="current">1</em>
+      <a href="#">2</a>
+      <a class="next_page" href="#">Next</a>
+    </div>
+  </body>
+</html>

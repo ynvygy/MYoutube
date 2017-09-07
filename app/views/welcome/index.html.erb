@@ -1,10 +1,10 @@
 <div id="background">
 	<header class="cf">
     <div class="wrapper_wide">
-  		<a href="index.html" id="logo">MY-outube</a>
+  		<a href="index.html" id="logo">MYoutube</a>
     <nav>
       <ul>
-        <li><a href="#">Videos</a></li>
+        <li><%= link_to "Videos", videos_path %></li>
         <% unless user_signed_in? %>
           <li><%= link_to "Sign In", new_user_session_path %></a></li>
           <li><%= link_to "Create a User", new_user_registration_path%></li>
@@ -19,6 +19,6 @@
   <div class="wrapper_skinny">
     <h1>Welcome to your favourite <br> video webpage</h1>
     <%= link_to "Create a User", new_user_registration_path, class: "button button-highlight" %>
-    <a href="#" class="button button-highlight">Videos</a>
+    <%= link_to "Videos", videos_path, class: "button button-highlight"%>
   </div>  
 </div>

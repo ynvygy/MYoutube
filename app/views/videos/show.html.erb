@@ -1,0 +1,63 @@
+<div id="video_show">
+  <div class="wrapper_skinny">
+    <div id="show_banner">
+      <h1><%= @video.title %></h1>
+      <p class="description"><%= @video.description%></p>
+      <a href="#" class="subscribe_link">Subscribe to user</a>
+    </div>
+  </div>
+  <div id="breadcrumb">
+    <%= link_to videos_path do %>
+    All Videos
+    <span>/</span>
+    <% end%>
+  </div>
+
+  <div id="videos">
+    <div class="wrapper_skinny">
+      <ul class="cf">
+        <li class="cf">
+          <div class="video_thumbnail">
+            <a href="video.html">
+              <img src="images/video1.jpg" alt="Video1">
+            </a>
+          </div>
+          <div class="video_overview">
+            <h2><a href="video.html">Enjoooy</a></h2>
+            <p class="description">Description</p>
+          </div>
+        </li>
+
+        <li class="cf">
+          <div class="video_thumbnail">
+            <a href="video.html">
+              <img src="images/video1.jpg" alt="Video1">
+            </a>
+          </div>
+          <div class="video_overview">
+            <h2><a href="video.html">Enjoooy</a></h2>
+            <p class="description">Description</p>
+          </div>
+        </li>
+
+        <li class="cf">
+          <div class="video_thumbnail">
+            <a href="video.html">
+              <img src="images/video1.jpg" alt="Video1">
+            </a>
+          </div>
+          <div class="video_overview">
+            <h2><a href="video.html">Enjoooy</a></h2>
+            <p class="description">Description</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="pagination">
+  <span class="previous_page disabled">Previous</span>
+  <em class="current">1</em>
+  <a href="#">2</a>
+  <a class="next_page" href="#">Next</a>
+</div>		
