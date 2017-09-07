@@ -29,6 +29,7 @@
                   <img src="images/videos1.jpg" alt="Videos1">
                   <div class="video_overview">
                     <h2><%= video.title %><h2>
+                    <p class="description"><%= truncate(video.description,length: 100) %></p>
                     <p class="videos_count">1 Video</p>
                   </div>  
                 </li>

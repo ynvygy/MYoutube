@@ -10,21 +10,33 @@
     <%= link_to videos_path do %>
     All Videos
     <span>/</span>
+    <%= link_to @video.title, video_path(@video) %> 
+    <span>/</span>
+    <%= @video.title %>
     <% end%>
+  </div>
+
+  <div id="episode_content">
+    <div class="wrapper_skinny">
+      <img src="images/video1.jpg" alt="video1" class="current_episode_thumbnail">
+      <h2><%= @video.title %></h2>
+      <p class="description"><%= @video.description %></p>
+    </div>
   </div>
 
   <div id="videos">
     <div class="wrapper_skinny">
       <ul class="cf">
+        <% @videos.each do |video| %>
         <li class="cf">
           <div class="video_thumbnail">
-            <a href="video.html">
+            <a href="#">
               <img src="images/video1.jpg" alt="Video1">
             </a>
           </div>
           <div class="video_overview">
-            <h2><a href="video.html">Enjoooy</a></h2>
-            <p class="description">Description</p>
+            <h2><%= link_to video.title, video_episode_path(@video) %></h2>
+            <p class="description"><%= @video.description %></p>
           </div>
         </li>
 
