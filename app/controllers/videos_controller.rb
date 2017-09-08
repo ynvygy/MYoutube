@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-	before_action :find_video, only: [:show]
+	before_action :find_video, only: [:show, :dashboard]
 
 	def new
 		@video = @video.new
@@ -23,10 +23,17 @@ class VideosController < ApplicationController
 		#@videos = Video.where(user_id: @user).order("created_at DESC")
 	end
 
+	def dashboard
+	end
+
 	private
 
 	def find_video
-		@video = Video.find(params[:id])
+		if params[:id].nil?
+			@video = current_video
+		else
+			@video = Video.find(params[:id])
+		end
 	end
 
 	def video_params

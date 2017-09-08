@@ -1,17 +1,45 @@
-<h1> New Video </h1>
+<div id="video_show">
+  <div id="show_banner">
+    <div class="wrapper_skinny">
+      <h1>Videos Dashboard</h1>
+    </div>
+  </div>
 
-<%= form_for(@evideo) do |f| %>
-	<%= f.label :title %><br>
-	<%= f.text_field :title %>
+  <div id="links">
+    <div class="wrapper-skinny">
+      <ul>
+        <li><%= link_to "Videos", root_path %></li>
+        <li><%= link_to "New Video", new_video_path, class: "current" %></li>
+        <li><%=link_to "Account Settings", edit_user_registration_path %></li>
+        <li><%=link_to "View Video", video_path(current_user)%></li>
+      </ul>
+    </div>
+  </div>
 
-	<br>
-	<br>
 
-	<%= f.label :description %><br>
-	<%= f.text_area :description %>
+	<h1> New Video </h1>
 
-	<br>
-	<br>
+	<div id="form">
+		<div class="wrapper_skinny">
+			<%= form_for(@evideo) do |f| %>
+				<div class="field">
+					<%= f.label :title %><br>
+					<%= f.text_field :title %>
+				</div>
 
-	<%= f.submit %>
-<% end %>
+				<br>
+				<br>
+
+				<div class="field">
+					<%= f.label :description %><br>
+					<%= f.text_area :description %>
+				</div>
+
+				<br>
+				<br>
+
+				<%= f.submit class= "button button_highlight button_block" %>
+			<% end %>
+		</div>
+	</div>
+</div>
