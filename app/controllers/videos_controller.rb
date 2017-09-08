@@ -1,4 +1,6 @@
 class VideosController < ApplicationController
+	before_action :authenticate_user!, except: [:show]
+	before_filter :require_permission
 	before_action :find_video, only: [:show, :edit, :update, :destroy, :dashboard]
 
 	def new
@@ -54,5 +56,12 @@ class VideosController < ApplicationController
 
 	def video_params
 		params.require(:video).permit(:title,:description)
+	end
+
+	def require_permission
+		@video = Video.find(params[:user_id])
+		if current_user != @user
+			redirect_to root_path, notice: "Not your page"
+		end
 	end
 end
