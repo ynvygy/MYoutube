@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170906092320) do
+ActiveRecord::Schema.define(version: 20170908100511) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -26,6 +26,10 @@ ActiveRecord::Schema.define(version: 20170906092320) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
@@ -35,8 +39,12 @@ ActiveRecord::Schema.define(version: 20170906092320) do
     t.string   "title"
     t.text     "description"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "thumbnail_file_name"
+    t.string   "thumbnail_content_type"
+    t.integer  "thumbnail_file_size"
+    t.datetime "thumbnail_updated_at"
   end
 
   add_index "videos", ["user_id"], name: "index_videos_on_user_id"
