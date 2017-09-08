@@ -18,7 +18,7 @@
 
   <div id="episode_content">
     <div class="wrapper_skinny">
-      <img src="images/video1.jpg" alt="video1" class="current_episode_thumbnail">
+      <%= image_tag @video.thumbnail.url(:medium), class: "current_video_thumbnail" %>
       <h2><%= @video.title %></h2>
       <p class="description"><%= @video.description %></p>
     </div>
@@ -30,9 +30,7 @@
         <% @videos.each do |video| %>
         <li class="cf">
           <div class="video_thumbnail">
-            <a href="#">
-              <img src="images/video1.jpg" alt="Video1">
-            </a>
+            <%= image_tag @video.thumbnail.url(:medium), class: "current_video_thumbnail" %>
           </div>
           <div class="video_overview">
             <h2><%= link_to video.title, video_episode_path(@video) %></h2>

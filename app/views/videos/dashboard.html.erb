@@ -23,9 +23,7 @@
       <% @videos.each do |video| %>
         <li class="cf">
           <div class="video_thumbnail">
-            <a href="video.html">
-              <img src="images/video1.jpg" alt="Video1">
-            </a>
+            <%= image_tag video.thumbnail.url(:medium), class: "current_video_thumbnail" %>
           </div>
           <div class="video_overview">
             <h2><%= link_to video.title, video_path(@video)%></h2>
