@@ -8,9 +8,13 @@
 </head>
 <body>
 <% if notice %>
-	<p class="notice"><%= notice %></p>
+	<div id="notice_wrapper">
+		<p class="notice"><%= notice %></p>
+	</div>
 <% elsif alert %>
-	<p class="alert"><%= alert %></p>
+  <div id="notice_wrapper">
+		<p class="alert"><%= alert %></p>
+	</div>
 <% end %>
 
 <% unless current_page?(root_path) %>
