@@ -22,7 +22,7 @@
     </div>
     <div id="videos" class="cf">
       <div class="wrapper">
-        <ul>
+        <ul class="cf">
           <% @videos.each do |video| %>
             <%= link_to video_path do %>
               <li>
@@ -36,6 +36,7 @@
             <% end %>
           <% end %>
         </ul>
+        <%= will_paginate @videos, previous_label: "Back", next_label: "Next" %>
       </div>
     </div>
 
@@ -45,5 +46,6 @@
       <a href="#">2</a>
       <a class="next_page" href="#">Next</a>
     </div>
+
   </body>
 </html>

@@ -17,7 +17,7 @@ class VideosController < ApplicationController
 	end
 
 	def index
-		@videos = Video.all.order("created_at DESC")
+		@videos = Video.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
 	end
 	
 	def show
@@ -50,7 +50,7 @@ class VideosController < ApplicationController
 		if params[:id].nil?
 			@video = current_video
 		else
-			@video = Video.find(params[:id])
+			@video = Video.find(params[:id]).paginate(:page => params[:page], :per_page => 3)
 		end
 	end
 
